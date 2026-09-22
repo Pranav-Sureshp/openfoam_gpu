@@ -46,4 +46,3 @@ Confirmed this reordering doesn't break the main OpenFOAM build afterward (`ldd 
 ### Net changes to a stock `feature-gpu` checkout
 - `wmake/rules/General/Amd-gpu/c`: `clang` → `amdclang`
 - Env: `ROCM_GPU=gfx950`, `LD_LIBRARY_PATH` prefixed with `/usr/lib64` during ThirdParty (KAHIP/ADIOS) builds only
-- GMP/MPFR built via ThirdParty (`makeGMP`, `makeMPFR`) in the absence of cluster modules
