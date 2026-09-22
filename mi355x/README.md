@@ -16,6 +16,7 @@ Building the `feature-gpu` branch against AMD Instinct MI355X (CDNA4, `gfx950`) 
 **Fix:**
 ```bash
 sed -i 's/\bclang\b/amdclang/' "$WM_PROJECT_DIR/wmake/rules/General/Amd-gpu/c"
+sed -i 's/\bclang\b/amdclang/' "$WM_PROJECT_DIR/wmake/rules/General/Clang/c"
 ```
 Note: the C++ rule (`wmake/rules/General/Amd-gpu/c++`) already correctly used `amdclang++` — only the plain-C rule had the bug.
 
