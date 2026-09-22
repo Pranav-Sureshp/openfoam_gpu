@@ -1,0 +1,22 @@
+module purge
+
+module load rhel9/mi355x/base
+module load python/3.6
+module load rocm/7.14
+module load openmpi/gcc
+module load ninja
+
+source /rds/project/rds-mOlK9qn0PlQ/ir-nadu1/OpenFOAM_2606_install/GPU/OpenFOAM-v2606/etc/bashrc
+export CC=mpicc
+export CXX=mpicxx
+export F90=mpif90
+export F77=mpif77
+export FC=mpifort
+
+export HIPCXXFLAGS="-std=c++17"
+export HSA_XNACK=1
+export ROCM_GPU=gfx950
+export LD_LIBRARY_PATH=$PETSC_DIR/$PETSC_ARCH/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/rds/project/rds-mOlK9qn0PlQ/ir-nadu1/OpenFOAM_2606_install/GPU/OpenFOAM-v2606/bin:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH="/usr/lib64:${LD_LIBRARY_PATH}"
+
