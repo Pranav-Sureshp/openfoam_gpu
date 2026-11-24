@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#SBATCH -J shercliff
+###SBATCH -A ZEA-P007-ZENITH-GPU
+#SBATCH -A CAM-P7-ZENITH-GPU
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=00:30:00
+#SBATCH --mail-type=NONE
+#SBATCH -p mi355x
+
+echo -e "Changed directory to `pwd`.\n"
+echo -e "JobID: $SLURM_JOB_ID\n======"
+echo "Time: `date`"
+echo "Running on master node: `hostname`"
+echo "Current directory: `pwd`"
+
+./run_mhdfoam.sh
+
