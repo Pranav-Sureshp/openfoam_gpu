@@ -1,5 +1,5 @@
 #!/bin/bash
-ulimit -s unlimited
+ulimit -s unlimited 
 
 source ~/.openfoam_v2606_mi355x_profile
 
@@ -17,7 +17,8 @@ echo "WM_PROJECT_DIR = ${WM_PROJECT_DIR}"
 
 
 cd "${WM_PROJECT_DIR}"
-wclean all
+(cd src && wclean all)
+(cd applications && wclean all)
 
 # Check system compatibility
 foamSystemCheck > log.foamSystemCheck
